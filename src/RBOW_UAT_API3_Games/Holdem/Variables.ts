@@ -1,0 +1,19 @@
+export let timestamp = new Date().toJSON(),
+  placeTime = timestamp;
+
+export const gameType = 'holdem',
+  tableId = 'HoldemTable00001',
+  bet = 5,
+  bet1 = 10, // two bet in first transaction
+  payyof = 10,
+  payyof1 = 30, // two payyof in first transaction and one payyof in second transaction
+  casinoId = 'joycasino0000001',
+  currency = 'EUR',
+  licenseePlayerId = 'aaaaaa',
+  playerId = '108nit1q4ndf1jx9',
+  balanceId = 'combined',
+  channelType = 'Phone',
+  channelOs = 'Other',
+  clientIpAddress = '127.0.0.1',
+  rbowDomain = '10.10.88.42',
+  rbowPort = '9092'

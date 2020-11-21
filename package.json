@@ -1,5 +1,5 @@
 {
-  "name": "ts-automation.json",
+  "name": "ts-automation",
   "version": "1.0.0",
   "description": "HTTP-client, which can send all crucial API3 requests and parse responses. This project is covered by tests and will be based on Typescript. Test framework \"Jest\". Additional node packets: \"Axios\", \"Babel\", \"ts-node\".",
   "main": "index.js",
@@ -19,7 +19,12 @@
   "homepage": "https://github.com/nmeredov/TS-Automation#readme",
   "dependencies": {
     "axios": "^0.21.0",
-    "jest": "^26.6.3",
     "ts-node": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.15",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.2"
   }
 }
