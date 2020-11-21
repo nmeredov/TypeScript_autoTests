@@ -1,17 +1,17 @@
 {
-  "name": "TS-Automation",
+  "name": "ts-automation.json",
   "version": "1.0.0",
   "description": "HTTP-client, which can send all crucial API3 requests and parse responses. This project is covered by tests and will be based on Typescript. Test framework \"Jest\". Additional node packets: \"Axios\", \"Babel\", \"ts-node\".",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nmeredov/TS-Automation.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Nazar Meredov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/nmeredov/TS-Automation/issues"
