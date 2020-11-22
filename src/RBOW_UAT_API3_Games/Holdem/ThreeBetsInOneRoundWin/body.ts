@@ -37,12 +37,12 @@ export const withdrawalBodyObjects1 = {
   bets: [
     {
       betId: preRequest.betId1,
-      code: 'HoldemBet0000001',
+      code: variables.betCode1,
       amount: variables.bet
     },
     {
       betId: preRequest.betId2,
-      code: 'HoldemBet0000002',
+      code: variables.betCode2,
       amount: variables.bet
     }
   ],
@@ -64,7 +64,7 @@ export const withdrawalBodyObjects2 = {
   bets: [
     {
       betId: preRequest.betId3,
-      code: 'HoldemBet0000003',
+      code: variables.betCode3,
       amount: variables.bet
     }
   ],
@@ -76,7 +76,7 @@ export const finalSettlementBodyObjects = {
   correlationId: setEnvironmentVariable.getRandomId(32),
   gameId: preRequest.gameId1,
   reason: {
-    type: 'GameFinished',
+    type: variables.settlementType,
     finishedTransactions: [
       {
         txId: preRequest.txId1,
@@ -104,8 +104,8 @@ export const finalSettlementBodyObjects = {
   }
 };
 
-export const getBalanceBody = JSON.stringify(getBalanceBodyObjects);
-export const getBalanceForTableBody = JSON.stringify(getBalanceForTableBodyObjects);
-export const withdrawalBody1 = JSON.stringify(withdrawalBodyObjects1);
-export const withdrawalBody2 = JSON.stringify(withdrawalBodyObjects2);
-export const finalSettlementBody = JSON.stringify(finalSettlementBodyObjects);
+export const getBalanceBody = JSON.stringify(getBalanceBodyObjects),
+  getBalanceForTableBody = JSON.stringify(getBalanceForTableBodyObjects),
+  withdrawalBody1 = JSON.stringify(withdrawalBodyObjects1),
+  withdrawalBody2 = JSON.stringify(withdrawalBodyObjects2),
+  finalSettlementBody = JSON.stringify(finalSettlementBodyObjects);
