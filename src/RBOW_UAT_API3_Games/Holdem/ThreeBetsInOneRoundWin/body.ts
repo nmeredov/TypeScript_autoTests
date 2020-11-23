@@ -5,13 +5,13 @@ import * as global from '../../../util/GlobalVariables';
 
 export const headers = { 'Content-Type': 'application/json' };
 
-export const getBalanceBodyObjects = {
+export const getBalanceBody = {
   correlationId: setEnvironmentVariable.getRandomId(32),
   sessionId: global.sessionId,
   balanceId: variables.balanceId
 };
 
-export const getBalanceForTableBodyObjects = {
+export const getBalanceForTableBody = {
   correlationId: setEnvironmentVariable.getRandomId(32),
   sessionId: global.sessionId,
   table: {
@@ -23,7 +23,7 @@ export const getBalanceForTableBodyObjects = {
   balanceId: variables.balanceId
 };
 
-export const withdrawalBodyObjects1 = {
+export const withdrawalBody1: string | any = {
   correlationId: setEnvironmentVariable.getRandomId(32),
   gameId: preRequest.gameId1,
   sessionId: global.sessionId,
@@ -50,7 +50,7 @@ export const withdrawalBodyObjects1 = {
   balanceId: variables.balanceId
 };
 
-export const withdrawalBodyObjects2 = {
+export const withdrawalBody2: string | any = {
   correlationId: setEnvironmentVariable.getRandomId(32),
   gameId: preRequest.gameId1,
   sessionId: global.sessionId,
@@ -72,7 +72,7 @@ export const withdrawalBodyObjects2 = {
   balanceId: variables.balanceId
 };
 
-export const finalSettlementBodyObjects = {
+export const finalSettlementBody: string | any = {
   correlationId: setEnvironmentVariable.getRandomId(32),
   gameId: preRequest.gameId1,
   reason: {
@@ -104,8 +104,3 @@ export const finalSettlementBodyObjects = {
   }
 };
 
-export const getBalanceBody = JSON.stringify(getBalanceBodyObjects),
-  getBalanceForTableBody = JSON.stringify(getBalanceForTableBodyObjects),
-  withdrawalBody1 = JSON.stringify(withdrawalBodyObjects1),
-  withdrawalBody2 = JSON.stringify(withdrawalBodyObjects2),
-  finalSettlementBody = JSON.stringify(finalSettlementBodyObjects);
