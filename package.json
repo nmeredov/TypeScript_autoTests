@@ -1,5 +1,5 @@
 {
-  "name": "ts-automation",
+  "name": "licencee_functional_autotests",
   "version": "1.0.0",
   "description": "HTTP-client, which can send all crucial API3 requests and parse responses. This project is covered by tests and will be based on Typescript. Test framework \"Jest\". Additional node packets: \"Axios\", \"Babel\", \"ts-node\".",
   "main": "index.js",
