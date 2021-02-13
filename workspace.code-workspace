@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../HTTP-client"
+		},
+		{
+			"path": "../../testClient"
+		}
+	],
+	"settings": {}
+}

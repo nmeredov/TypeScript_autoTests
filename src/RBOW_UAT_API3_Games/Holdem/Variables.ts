@@ -12,6 +12,5 @@ export const gameType: string = 'holdem',
   betCode3: string = "HoldemBet0000003",
   settlementType: string = "GameFinished",
   currency: string = 'EUR',
-  balanceId: string = 'combined',
-  rbowDomain: string = '10.10.88.42',
-  rbowPort: string = '9092'
+  balanceId: string = 'combined';
+

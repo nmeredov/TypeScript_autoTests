@@ -1,27 +1,24 @@
-/**
- * @jest-environment node
- */
-
-import * as variable from '../../RBOW_UAT_API3_Games/Holdem/Variables';
-import * as body from '../../RBOW_UAT_API3_Games/Holdem/ThreeBetsInOneRoundWin/Body';
-import { GetBalance } from '../../API3MethodsTemplate/get_balance';
-import { Withdrawal } from '../../API3MethodsTemplate/withdrawal';
-import { FinalSettlement } from '../../API3MethodsTemplate/final_settlement';
+import * as variable from '../../RBOW_UAT_API3_Games/Holdem/variables';
+import * as body from "../../RBOW_UAT_API3_Games/Holdem/ThreeBetsInOneRoundWin/body";
+import * as head from '../../util/globalVariables';
+import { GetBalance } from '../../API3Methods/getBalance';
+import { Withdrawal } from '../../API3Methods/withdrawal';
+import { FinalSettlement } from '../../API3Methods/finalSettlement';
 
 describe("Get balance", () => {
   let testResponse: any;
   let currentBalance: number;
   let data: any;
 
-  beforeEach(async () => {
-    testResponse = await GetBalance(body.getBalanceBody, body.headers);
+  beforeAll(async () => {
+    testResponse = await GetBalance(body.getBalanceBody, head.headers);
     data = testResponse.data;
     currentBalance = data.balances[0].amount;
     console.log('Balance:', currentBalance);
     console.log('get_balance_request', body.getBalanceBody);
   });
 
-  afterEach(() => {
+  afterAll(() => {
     console.log('get_balance_response', data);
   });
 
@@ -44,15 +41,15 @@ describe("Get balance_for_table - Checks balance for table and if response statu
   let currentBalance: number;
   let data: any;
 
-  beforeEach(async () => {
-    testResponse = await GetBalance(body.getBalanceForTableBody, body.headers);
+  beforeAll(async () => {
+    testResponse = await GetBalance(body.getBalanceForTableBody, head.headers);
     data = testResponse.data;
     currentBalance = data.balances[0].amount;
     console.log('Balance:', currentBalance);
     console.log('get_balance_for_table_request', body.getBalanceForTableBody);
   });
 
-  afterEach(() => {
+  afterAll(() => {
     console.log('get_balance_for_table_response', data);
   });
 
@@ -77,8 +74,8 @@ describe("Withdrawal 1 - Checks withdrawal and no error in response", async () =
   let expectedBalance: number;
   let data: any;
 
-  beforeEach(async () => {
-    testResponse = await Withdrawal(body.withdrawalBody1, body.headers);
+  beforeAll(async () => {
+    testResponse = await Withdrawal(body.withdrawalBody1, head.headers);
     data = testResponse.data;
     currentBalance = data.balances[0].amount;
     previousBalance = currentBalance + variable.bet1;
@@ -90,7 +87,7 @@ describe("Withdrawal 1 - Checks withdrawal and no error in response", async () =
     console.log('withdrawal_request_1', body.withdrawalBody1);
   });
 
-  afterEach(() => {
+  afterAll(() => {
     console.log('withdrawal_response_1', data);
   });
 
@@ -110,8 +107,8 @@ describe("Withdrawal 2 - Checks withdrawal and no error in response", async () =
   let expectedBalance: number;
   let data: any;
 
-  beforeEach(async () => {
-    testResponse = await Withdrawal(body.withdrawalBody2, body.headers);
+  beforeAll(async () => {
+    testResponse = await Withdrawal(body.withdrawalBody2, head.headers);
     data = testResponse.data;
     currentBalance = data.balances[0].amount;
     previousBalance = currentBalance + variable.bet;
@@ -123,7 +120,7 @@ describe("Withdrawal 2 - Checks withdrawal and no error in response", async () =
     console.log('withdrawal_response_2', body.withdrawalBody2);
   });
 
-  afterEach(() => {
+  afterAll(() => {
     console.log('withdrawal_response_2', data);
   });
 
@@ -140,15 +137,15 @@ describe("Final Settlement - Checks if response status is successful", async () 
   let testResponse: any;
   let data: any;
 
-  beforeEach(async () => {
-    testResponse = await FinalSettlement(body.finalSettlementBody, body.headers);
+  beforeAll(async () => {
+    testResponse = await FinalSettlement(body.finalSettlementBody, head.headers);
     data = testResponse.data;
     console.log('Resolution is: Winninig the game ');
     console.log('Payout is:', variable.payyof1);
     console.log('final_settlement_request', body.finalSettlementBody);
   });
 
-  afterEach(() => {
+  afterAll(() => {
     console.log('final_settlement_response', data);
   });
 
@@ -164,8 +161,8 @@ describe("Get balance", () => {
   let expectedBalance: number;
   let data: any;
 
-  beforeEach(async () => {
-    testResponse = await GetBalance(body.getBalanceBody, body.headers);
+  beforeAll(async () => {
+    testResponse = await GetBalance(body.getBalanceBody, head.headers);
     data = await testResponse.data;
     currentBalance = data.balances[0].amount;
     initialBalance = currentBalance - variable.payyof1 + variable.bet1 + variable.bet;
@@ -176,7 +173,7 @@ describe("Get balance", () => {
     console.log('get_balance_request', body.getBalanceBody);
   });
 
-  afterEach(() => {
+  afterAll(() => {
     console.log('get_balance_response', data);
   });
 

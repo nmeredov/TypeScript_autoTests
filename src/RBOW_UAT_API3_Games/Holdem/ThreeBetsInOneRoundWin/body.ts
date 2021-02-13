@@ -1,17 +1,18 @@
-import * as preRequest from './PreRequest_IDs';
-import { setEnvironmentVariable } from '../../../util/RandomGenerator';
-import * as variables from '../Variables';
-import * as global from '../../../util/GlobalVariables';
+import { setEnvironmentVariable } from '../../../util/randomGenerator';
+import { GetBalanceBody } from '../../../API3Methods/getBalance';
+import { WithdrawalBody } from '../../../API3Methods/withdrawal';
+import { FinalSettlementBody } from '../../../API3Methods/finalSettlement';
+import * as preRequest from './preRequestIds';
+import * as variables from '../variables';
+import * as global from '../../../util/globalVariables';
 
-export const headers = { 'Content-Type': 'application/json' };
-
-export const getBalanceBody = {
+export const getBalanceBody: GetBalanceBody = {
   correlationId: setEnvironmentVariable.getRandomId(32),
   sessionId: global.sessionId,
   balanceId: variables.balanceId
 };
 
-export const getBalanceForTableBody = {
+export const getBalanceForTableBody: GetBalanceBody = {
   correlationId: setEnvironmentVariable.getRandomId(32),
   sessionId: global.sessionId,
   table: {
@@ -23,7 +24,7 @@ export const getBalanceForTableBody = {
   balanceId: variables.balanceId
 };
 
-export const withdrawalBody1: string | any = {
+export const withdrawalBody1: WithdrawalBody = {
   correlationId: setEnvironmentVariable.getRandomId(32),
   gameId: preRequest.gameId1,
   sessionId: global.sessionId,
@@ -50,7 +51,7 @@ export const withdrawalBody1: string | any = {
   balanceId: variables.balanceId
 };
 
-export const withdrawalBody2: string | any = {
+export const withdrawalBody2: WithdrawalBody = {
   correlationId: setEnvironmentVariable.getRandomId(32),
   gameId: preRequest.gameId1,
   sessionId: global.sessionId,
@@ -72,7 +73,7 @@ export const withdrawalBody2: string | any = {
   balanceId: variables.balanceId
 };
 
-export const finalSettlementBody: string | any = {
+export const finalSettlementBody: FinalSettlementBody = {
   correlationId: setEnvironmentVariable.getRandomId(32),
   gameId: preRequest.gameId1,
   reason: {
@@ -103,4 +104,3 @@ export const finalSettlementBody: string | any = {
     ]
   }
 };
-

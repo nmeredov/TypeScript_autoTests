@@ -3,28 +3,40 @@
   "version": "1.0.0",
   "description": "HTTP-client, which can send all crucial API3 requests and parse responses. This project is covered by tests and will be based on Typescript. Test framework \"Jest\". Additional node packets: \"Axios\", \"Babel\", \"ts-node\".",
   "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
+    "test-production": "cross-env NODE_ENV=production jest",
+    "test-debug": "cross-env NODE_ENV=debug jest",
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nmeredov/TS-Automation.git"
+    "url": "git+https://github.com/nmeredov/licencee_functional_autotests"
   },
   "keywords": [],
   "author": "Nazar Meredov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nmeredov/TS-Automation/issues"
+    "url": "https://github.com/nmeredov/licencee_functional_autotests"
   },
-  "homepage": "https://github.com/nmeredov/TS-Automation#readme",
+  "homepage": "https://github.com/nmeredov/licencee_functional_autotests#readme",
   "dependencies": {
     "axios": "^0.21.0",
     "ts-node": "^9.0.0"
   },
   "devDependencies": {
     "@types/jest": "^26.0.15",
+    "cross-env": "^7.0.3",
     "jest": "^26.6.3",
+    "jest-html-reporter": "^3.3.0",
     "ts-jest": "^26.4.4",
+    "tslint": "^6.1.3",
     "typescript": "^4.1.2"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./debugMode.ts",
+    "testEnvironment": "node"
   }
 }

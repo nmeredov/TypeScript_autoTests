@@ -1,4 +1,4 @@
-# licencee_functional_autotests
+# licensee_functional_autotests
 
 HTTP-client, which can send all crucial API3 requests and parse responses.
 This project is covered by tests and will be based on Typescript.
@@ -17,13 +17,11 @@ Commands to run test:
 2. To run one test scenario
    e.g. ----> jest test/Holdem/ThreeBetsInOneRoundWin.ts
 
-There is a known bug with Jest and Axios:
+3. To run entire scope > npm run test-production (w/o console.logs)
+4. To run entire scope with all the console.logs > npm run test-debug
+5. Test value
+6. To execute several scenarios in one run: jest 'Holdem' 'DragonTiger'
+7. To do reporting execute jest 'Holdem' --json --outputFile=result.json . Report will be stored in unstructured format. Use any text editor to beautify the report.
+
+The string "testEnvironment": "node" in the package.json fixed that.
 It affects on using Promises.
-Now to fix that is used the next decision --> Make sure that it will be in all test.ts files:
-
-/**
- * @jest-environment node
- */
-
-Probably someone could find the decision of that fix on config level, not using that strings of code in test.ts files.
-Find more info here https://github.com/axios/axios/issues/1754
