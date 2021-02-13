@@ -5,10 +5,6 @@ This project is covered by tests and will be based on Typescript.
 Test framework "Jest".
 Additional node packets: "typescript", "axios", "ts-node", "types/jest", "ts-jest".
 
-Before, starting the contribute to this project, make sure that you have installed "jest" and typescript globally.
-npm i -g jest
-npm i -g typescript
-
 Commands to run test:
 
 1. To run the whole folder with all scenarios
